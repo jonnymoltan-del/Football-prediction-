@@ -181,8 +181,29 @@ footer{
 <h1>⚽ Jonny Football Predictions</h1>
 <p>Daily Football Tips & Analysis</p>
 </header>
+<div class="admin">
+    <h2>Admin Login</h2>
 
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
 
+    <button onclick="login()">Login</button>
+
+    <p id="message"></p>
+</div>
+
+<script>
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "1234") {
+        document.getElementById("message").innerHTML = "Login Successful!";
+    } else {
+        document.getElementById("message").innerHTML = "Invalid Username or Password";
+    }
+}
+</script>
 
 <footer>
 © 2026 Jonny Football Predictions
