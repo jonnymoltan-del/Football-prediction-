@@ -1,6 +1,132 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonny Football Predictions</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f5f5;
+}
+
+header{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+.admin{
+    background:white;
+    margin:15px;
+    padding:15px;
+    border-radius:10px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:5px 0;
+    box-sizing:border-box;
+}
+
+button{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:5px;
+}
+
+.card{
+    background:white;
+    margin:15px;
+    padding:20px;
+    border-radius:15px;
+}
+
+.prediction{
+    color:green;
+    font-weight:bold;
+}
+
+.confidence{
+    color:#0d6efd;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>⚽ Jonny Football Predictions</h1>
+<p>Daily Football Tips & Analysis</p>
+</header>
+
+<div class="admin">
+<h2>Add Prediction</h2>
+
+<input type="text" id="match" placeholder="Match">
+<input type="text" id="prediction" placeholder="Prediction">
+<input type="number" id="confidence" placeholder="Confidence %">
+
+<button onclick="addPrediction()">Add Prediction</button>
+</div>
+
+<div id="predictions"></div>
+
+<footer>
+© 2026 Jonny Football Predictions
+</footer>
+
+<script>
+function addPrediction(){
+
+let match =
+document.getElementById("match").value;
+
+let prediction =
+document.getElementById("prediction").value;
+
+let confidence =
+document.getElementById("confidence").value;
+
+if(match==="" || prediction===""){
+alert("Fill all fields");
+return;
+}
+
+document.getElementById("predictions").innerHTML += `
+<div class="card">
+<h2>${match}</h2>
+<p class="prediction">
+Prediction: ${prediction}
+</p>
+<p class="confidence">
+Confidence: ${confidence}%
+</p>
+</div>
+`;
+
+document.getElementById("match").value="";
+document.getElementById("prediction").value="";
+document.getElementById("confidence").value="";
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jonny Football Predictions</title>
 
